@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   get "about" => "static_pages#about"
 
   devise_for :users
+
+  namespace :admin do
+    root "dashboards#index"
+    resources :users
+  end
 end

@@ -1,0 +1,15 @@
+<% provide :title, t("admin.manage_users") %>
+<h1><%= t "admin.manage_users" %></h1>
+<div class="wrapper">
+  <%= link_to t("admin.create_new_user"), new_admin_user_path,
+    class: "btn btn-primary btn-lg" %>
+</div>
+<div>
+  <h1><%= t "all_users" %></h1>
+  <%= will_paginate %>
+  <ul class="users">
+    <%= render @users %>
+  </ul>
+  <%= will_paginate %>
+</div>
+<%= link_to t("admin.go_back"), admin_root_path %>
