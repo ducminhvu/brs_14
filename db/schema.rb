@@ -45,25 +45,32 @@ ActiveRecord::Schema.define(version: 20150708035830) do
   create_table "comments", force: :cascade do |t|
     t.string   "content"
     t.integer  "user_id"
+    t.integer  "review_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "status"
+    t.integer  "user_id"
+    t.integer  "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "likes", force: :cascade do |t|
     t.integer  "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "activity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "readings", force: :cascade do |t|
     t.integer  "status"
     t.integer  "user_id"
+    t.integer  "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -92,13 +99,14 @@ ActiveRecord::Schema.define(version: 20150708035830) do
     t.string   "content"
     t.string   "thesis_statement"
     t.integer  "rating"
+    t.integer  "user_id"
+    t.integer  "book_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "admin"
     t.string   "image"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false

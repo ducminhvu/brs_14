@@ -28,3 +28,7 @@ en:
   sessions: "sessions"
   registrations: "sessions"
   edit: "Edit"
+  users: "users"
+  profile: "profile"
+  settings: "settings"
+  account: "account"
