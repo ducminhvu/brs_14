@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "dashboards#index"
     resources :books
-    resources :users  
+    resources :users
+    resources :categories
   end
 end
