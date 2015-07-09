@@ -5,6 +5,6 @@ namespace :admin do
       email: "admin@brs.com",
       password: "foobar11111",
       password_confirmation: "foobar11111",
-      admin: true
+      role: "admin"
   end
 end
