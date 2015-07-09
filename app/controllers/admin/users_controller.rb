@@ -1,4 +1,6 @@
 class Admin::UsersController < ApplicationController
+  before_action :required_admin
+  
   def index
     @users = User.paginate page: params[:page]
   end
