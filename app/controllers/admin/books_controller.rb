@@ -27,7 +27,7 @@ class Admin::BooksController < ApplicationController
   end
 
   def update
-    @book = Book.new book_params
+    @book = Book.find params[:id]
     if @book.update_attributes book_params
       redirect_to [:admin, @book], notice: t("admin.book.update_success")
     else
@@ -36,7 +36,7 @@ class Admin::BooksController < ApplicationController
   end
 
   def destroy
-    @book = Book.new book_params
+    @book = Book.find params[:id]
     if @book.destroy
       flash[:success] = t "admin.book.delete_success"
     else

@@ -57,6 +57,13 @@ en:
       delete_success: "Delete book succesfully"
       delete_failed: "Delete failed"
       edit: "Edit book"
+    category:
+      new: "New Category"
+      create_success: "Created category succesfully"
+      update_success: "Updated category succesfully"
+      delete_success: "Delete category succesfully"
+      delete_failed: "Delete failed"
+      edit: "Edit category"
     admin_title: "Admin page"
     required_admin_login: "Need logging in as admin!!"
     manage_books: "Manage books"
