@@ -1,0 +1,16 @@
+admin: 
+  book:
+    create: "Created success !"
+    update: "Updated success !"
+length:
+  page: 10
+picture:
+  max_size: 5
+image_type:
+  - "jpg"
+  - "jpeg"
+  - "gif"
+  - "png"
+resize:
+  - 400
+  - 400
