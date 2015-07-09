@@ -1,0 +1,7 @@
+<li id="user-<%= user.id %>">
+  <h3><%= user.name %></h3>
+  <h4><%= user.email %></h4>
+  <%= link_to t("admin.edit_user"), edit_admin_user_path(user), class: "btn btn-default" %>
+  <%= link_to t("admin.delete_user"), [:admin, user], method: :delete, remote: true,
+    data: {confirm: t("admin.delete_confirm")}, class: "btn btn-danger" %>
+</li>
