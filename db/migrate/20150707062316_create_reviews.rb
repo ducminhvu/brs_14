@@ -4,6 +4,8 @@ class CreateReviews < ActiveRecord::Migration
       t.string :content
       t.string :thesis_statement
       t.integer :rating
+      t.references :user
+      t.references :book
 
       t.timestamps null: false
     end
