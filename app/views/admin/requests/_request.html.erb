@@ -1,0 +1,14 @@
+<li id="request-<%= request.id %>">
+  <h3><%= t("admin.request.book_title") + request.book_name %></h3>
+  <h4><%= t("admin.request.author") + request.author %></h4>
+  <p><%= t("admin.request.description") + truncate(request.description) %></p>
+  <p>
+    <%= t("admin.request.status") %>
+    <%= request.bought? ? t("admin.request.bought") : t("admin.request.requesting") %>
+  </p>
+  <%= link_to t("admin.request.view_request"), admin_request_path(request),
+    class: "btn btn-default" %>
+  <%= link_to t("admin.request.delete"), [:admin, request], method: :delete,
+    remote: true, data: {confirm: t("admin.delete_confirm")},
+    class: "btn btn-danger" %>
+</li>

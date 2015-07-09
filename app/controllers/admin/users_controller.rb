@@ -1,5 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :required_admin
+  before_action :set_user, only: [:edit, :update, :destroy]
   
   def index
     @users = User.paginate page: params[:page]
@@ -20,11 +21,9 @@ class Admin::UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find params[:id]
   end
 
   def update
-    @user = User.find params[:id]
     if @user.update_attributes user_params
       flash[:success] = t "admin.update_success"
       redirect_to admin_users_path
@@ -34,11 +33,10 @@ class Admin::UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find params[:id]
-    @user.destroy
-    respond_to do |format|
-      format.html {redirect_to admin_users_path}
-      format.js
+    if @user.destroy
+      respond_to do |format|
+        format.js
+      end
     end
   end
 
@@ -50,5 +48,9 @@ class Admin::UsersController < ApplicationController
     end
     params.require(:user).permit :name, :email, :password,
       :password_confirmation, :picture
+  end
+
+  def set_user
+    @user = User.find params[:id]
   end
 end
