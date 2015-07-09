@@ -1,0 +1,13 @@
+<tr>
+  <td><%= book.title %></td>
+  <td><%= book.category.name %></td>
+  <td><%= book.publish_date %></td>
+  <td><%= book.author %></td>
+  <td><%= book.number_page %></td>
+  <td><%= book.description %></td>
+  <td><%= book.picture %></td>
+  <td><%= link_to t("features.show"), [:admin, book] %></td>
+  <td><%= link_to t("features.edit"), edit_admin_book_path(book) %></td>
+  <td><%= link_to t("features.destroy"), [:admin, book], method: :delete,
+    data: {confirm: t("login.question")} %></td>
+</tr>
