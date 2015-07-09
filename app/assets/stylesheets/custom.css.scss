@@ -218,7 +218,7 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
+    border-bottom: 1px solid gray;
   }
 }
 
@@ -266,4 +266,8 @@ input {
 }
 .button_to .btn{
   width: auto;
+}
+
+.wrapper {
+    text-align: center;
 }
