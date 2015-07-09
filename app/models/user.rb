@@ -15,4 +15,11 @@ class User < ActiveRecord::Base
                                    dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :following, through: :active_relationships, source: :followed
+
+  enum role: Settings.roles
+  after_initialize :set_default_role, if: :new_record?
+
+  def set_default_role
+    self.role ||= :user
+  end
 end

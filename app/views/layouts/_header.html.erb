@@ -16,7 +16,7 @@
               <li><%= link_to t("settings"), "#" %></li>
               <li class="divider"></li>
               <li>
-                <li><%= link_to t("static_page.log_out"), logout_path, method: :delete %></li>
+                <li><%= link_to t("static_page.log_out"), destroy_user_session_path, method: :delete %></li>
               </li>
             </ul>
           </li>
