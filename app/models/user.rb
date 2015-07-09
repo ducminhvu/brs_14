@@ -15,4 +15,6 @@ class User < ActiveRecord::Base
                                    dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :following, through: :active_relationships, source: :followed
+
+  validates :password, presence: true, allow_nil: true
 end
