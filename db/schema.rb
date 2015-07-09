@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20150708035830) do
 
   add_index "books", ["category_id"], name: "index_books_on_category_id"
 
-  create_table "categogies", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.string   "content"
     t.datetime "created_at", null: false
@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 20150708035830) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer  "user_id"
     t.integer  "status"
     t.integer  "user_id"
     t.integer  "book_id"

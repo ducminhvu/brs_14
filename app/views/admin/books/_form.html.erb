@@ -1,0 +1,33 @@
+<%= form_for [:admin, @book], html: {multipart: true} do |f| %>
+  <p>
+    <%= f.label :title %><br/>
+    <%= f.text_field :title, required: true, class: "form-control" %>
+  </p>
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.select :category_id,
+      options_from_collection_for_select(@categories, :id, :name), {},
+        class: "form-control" %>
+  </div>
+  <p>
+    <%= f.label :publish_date %><br/>
+    <%= f.date_field :publish_date, required: true, class: "form-control" %>
+  </p>
+  <p>
+    <%= f.label :author %><br/>
+    <%= f.text_field :author, required: true, class: "form-control" %>
+  </p>
+  <p>
+    <%= f.label :number_page %><br/>
+    <%= f.text_field :number_page, required: true, class: "form-control" %>
+  </p>
+  <p>
+    <%= f.label :description %><br/>
+    <%= f.text_field :description, class: "form-control" %>
+  </p>
+  <p>
+    <%= f.label :picture %><br/>
+    <%= f.file_field :picture, class: "form-control" %>
+  </p>
+  <%= f.submit t("submit"), class: "form-control" %>
+<% end %>

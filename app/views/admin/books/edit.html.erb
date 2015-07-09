@@ -1,0 +1,6 @@
+<h1><%= t "book.edit" %></h1>
+
+<%= render "form" %>
+
+<%= link_to t("features.show"), [:admin, @book] %>
+<%= link_to t("features.back"), admin_books_path %>
