@@ -68,6 +68,7 @@ en:
     required_admin_login: "Need logging in as admin!!"
     manage_books: "Manage books"
     manage_users: "Manage users"
+    manage_categories: "Manage categories"
     go_back: "<<back"
     all_users: "All users"
     delete_confirm: "You sure?"
@@ -91,3 +92,7 @@ en:
       status: "Status: "
       bought: "Bought"
       requesting: "Requesting"
+  book:
+    category: "Category"
+    publish_date: "Publish date"
+    author: "Author"

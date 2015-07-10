@@ -3,6 +3,7 @@
     <%= link_to t("static_page.title"), root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to_if current_user.admin?, t("dashboard"), admin_root_path %></li>
         <li><%= link_to t("static_page.home"), root_path %></li>
         <li><%= link_to t("static_page.help"), help_path %></li>
         <% if user_signed_in? %>
