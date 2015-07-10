@@ -1,0 +1,12 @@
+<hr>
+<span><%= link_to review.user.email, review.user %></span>
+<span class="content">
+  <%= review.content %><br>
+  <%= review.thesis_statement %><br>
+</span>
+<i>
+  <%= t "post" %><%= time_ago_in_words(review.created_at) %><%= t "ago" %>
+</i>
+<% if current_user == review.user %>
+  <%= link_to t("delete"), review, method: :delete %>
+<% end %>

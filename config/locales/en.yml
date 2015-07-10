@@ -91,8 +91,16 @@ en:
       status: "Status: "
       bought: "Bought"
       requesting: "Requesting"
+      accept: "Accept request"
   book:
     category: "Category"
     publish_date: "Publish date"
     author: "Author"
-
+  title: "Title"
+  compose_new_body: "Compose new body...."
+  post: "Post"
+  you_sure: "You Sure?"
+  ago: " ago."
+  review_created: "Review Created"
+  review_deleted: "Review deleted"
+  delete: "delete"
