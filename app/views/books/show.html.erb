@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag(@book.picture.url, height: Settings.picture.height_n, width: Settings.picture.width_n) if @book.picture? %>
+<p>
+  <strong><%= t "title.title" %>:</strong>
+  <%= @book.title %>
+</p>
+<p>
+  <strong><%= t "title.publish_date" %>:</strong>
+  <%= @book.publish_date.day %>/<%= @book.publish_date.month %>/<%= @book.publish_date.year %>
+</p>
+<p>
+  <strong><%= t "title.author" %>:</strong>
+  <%= @book.author %>
+</p>
+<p>
+  <strong><%= t "title.category" %>:</strong>
+  <%= @book.category.name %>
+</p>
+<p>
+  <strong><%= t "title.number_page" %>:</strong>
+  <%= @book.number_page %>
+</p>
+<p>
+  <strong><%= t "title.description" %>:</strong>
+  <%= @book.description %>
+</p>

@@ -1,0 +1,7 @@
+<div class="row">
+  <p id="notice"><%= notice %></p>
+  <h1><%= t "admin.books" %></h1>
+  <%= render @books %>
+  <%= will_paginate @books %>
+  <br>
+</div>

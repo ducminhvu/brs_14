@@ -6,6 +6,10 @@ length:
   page: 10
 picture:
   max_size: 5
+  width: "160"
+  height: "224"
+  width_n: "320"
+  height_n: "448"
 image_type:
   - "jpg"
   - "jpeg"
