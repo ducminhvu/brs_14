@@ -1,0 +1,10 @@
+<% provide :title, t("admin.request.title") %>
+<div>
+  <%= link_to t("admin.go_back"), admin_root_path %>
+  <h1><%= t "admin.request.title" %></h1>
+  <%= will_paginate %>
+  <ul class="requests">
+    <%= render @requests %>
+  </ul>
+  <%= will_paginate %>
+</div>
