@@ -4,10 +4,11 @@
   <p><%= t("admin.request.description") + truncate(request.description) %></p>
   <p>
     <%= t("admin.request.status") %>
-    <%= request.bought? ? t("admin.request.bought") : t("admin.request.requesting") %>
+    <span id="request-status-<%= request.id %>">
+      <%= request.bought? ? t("admin.request.bought") : t("admin.request.requesting") %>
+    </span>
   </p>
-  <%= link_to t("admin.request.view_request"), admin_request_path(request),
-    class: "btn btn-default" %>
+  <%= render "request_form", object: request %>
   <%= link_to t("admin.request.delete"), [:admin, request], method: :delete,
     remote: true, data: {confirm: t("admin.delete_confirm")},
     class: "btn btn-danger" %>

@@ -1,0 +1,5 @@
+<% if !object.bought %>
+  <%= form_for [:admin, object], html: {class: "form-inline"}, remote: true do |f| %>
+    <%= f.submit t("admin.request.accept"), class: "btn btn-primary" %>
+  <% end %>
+<% end %>
