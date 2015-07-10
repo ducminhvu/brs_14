@@ -10,7 +10,7 @@ class Book < ActiveRecord::Base
   validates :category, presence: true 
   validates :number_page, numericality: {only_integer: true}
   validate :picture_size
-  
+
   private
   def picture_size
     if picture.size > Settings.picture.max_size.megabytes
