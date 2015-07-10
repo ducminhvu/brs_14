@@ -84,8 +84,7 @@ en:
     manage_request: "Request buy books"
     request:
       title: "Requests"
-      delete: "Delete"
-      view_request: "View request"
+      delete: "Delete request"
       book_title: "Book title: "
       author: "Author: "
       description: "Description: "
@@ -96,3 +95,4 @@ en:
     category: "Category"
     publish_date: "Publish date"
     author: "Author"
+
