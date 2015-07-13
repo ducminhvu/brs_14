@@ -118,6 +118,11 @@ en:
       status: "Status"
       accepted: "Accepted"
       sending: "Sending"
+      create: "Create new request"
+      no_request_show: "You don't have any request!"
     request:
       delete: "Delete"
       delete_confirm: "Are you sure?"
+    new_request_form:
+      send: "Send request"
+      close: "Close"
