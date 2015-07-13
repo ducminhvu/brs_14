@@ -1,0 +1,13 @@
+<% provide :title, t(".title") %>
+<h2><%= t ".title" %></h2>
+<table class="table table-bordered">
+  <tr>
+    <th class="bok-column"><%= t ".book_name" %></th>
+    <th class="aut-column"><%= t ".author" %></th>
+    <th class="des-column"><%= t ".description" %></th>
+    <th class="stt-column"><%= t ".status" %></th>
+    <th class="dtr-column"></th>
+  </tr>
+  <%= render @requests %>
+</table>
+<%= will_paginate %>

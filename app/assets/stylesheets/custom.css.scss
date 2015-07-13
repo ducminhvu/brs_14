@@ -44,7 +44,6 @@ h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
   font-weight: normal;
   color: $gray-light;
 }
@@ -256,4 +255,24 @@ input {
 
 .button-width {
   width: 80px;
+}
+
+.bok-column{
+  width: 25%;
+}
+
+.aut-column{
+  width: 15%;
+}
+
+.des-column{
+  width: 35%;
+}
+
+.stt-column{
+  width: 10%;
+}
+
+.dtr-column{
+  width: 5%;
 }

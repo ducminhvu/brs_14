@@ -1,0 +1,12 @@
+<tr id="request-<%= request.id %>"
+  class='<%= request.bought? ? "success" : "warning" %>'>
+  <td><%= request.book_name %></td>
+  <td><%= request.author %></td>
+  <td><%= request.description %></td>
+  <td><%= request.bought? ? t(".accepted") : t(".sending") %></td>
+  <td>
+    <%= link_to t(".delete"), [current_user, request], method: :delete,
+      remote: true, data: {confirm: t(".delete_confirm")},
+      class: "btn btn-danger" %>
+  </td>
+</tr>

@@ -27,3 +27,4 @@ setting:
     - followers
   following: following
   followers: followers
+requests_per_page: 10
