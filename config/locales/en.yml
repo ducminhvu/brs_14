@@ -104,3 +104,7 @@ en:
   review_created: "Review Created"
   review_deleted: "Review deleted"
   delete: "delete"
+  follow: "Follow"
+  unfollow: "UnFollow"
+  following: "Following"
+  followers: "Followers"

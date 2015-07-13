@@ -5,10 +5,11 @@ Rails.application.routes.draw do
   get "help" => "static_pages#help"
   get "about" => "static_pages#about"
   get "logout" => "devise/sessions#destroy"
-  
+
   resources :books, only: [:index, :show]
   resources :reviews, only: :destroy
   resources :users
+  resources :relationships, only: [:create, :destroy]
   resources :books do
     resources :reviews
   end
@@ -19,4 +20,5 @@ Rails.application.routes.draw do
     resources :categories
     resources :requests
   end
+  get "users/:id/:type" => "relationships#index", as: "follows"
 end
