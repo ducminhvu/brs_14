@@ -15,12 +15,25 @@ class User < ActiveRecord::Base
                                    foreign_key: "followed_id",
                                    dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
-  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower,
+                       dependent: :destroy
 
   enum role: Settings.roles
   after_initialize :set_default_role, if: :new_record?
 
   def set_default_role
     self.role ||= :user
+  end
+
+  def follow other_user
+    active_relationships.create followed_id: other_user.id
+  end
+
+  def following? other_user
+    following.include? other_user
+  end
+
+  def unfollow other_user
+    active_relationships.find_by(followed_id: other_user.id).destroy
   end
 end

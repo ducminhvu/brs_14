@@ -21,3 +21,9 @@ resize:
 roles:
   - "admin"
   - "user"
+setting:
+  follow_type:
+    - following
+    - followers
+  following: following
+  followers: followers
