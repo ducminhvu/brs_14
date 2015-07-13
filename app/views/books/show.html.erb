@@ -27,10 +27,14 @@
       <strong><%= t "title.description" %>:</strong>
       <%= @book.description %>
     </p>
+    <p>
+      <div class = "star-rating" data-score= <%= @review.rating %> ></div>
+    </p>
   </div>
   <div class="col-md-8">
     <%= form_for [@book, @review], html: {multipart: true} do |f| %>
       <div class="field">
+        <div class = "star-rating-review"></div>
         <%= f.text_field :content, placeholder: t("title"), class: "form-control" %>
         <%= f.text_area :thesis_statement, placeholder: t("compose_new_body"),
           class: "form-control" %>
