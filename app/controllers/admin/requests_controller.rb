@@ -3,7 +3,7 @@ class Admin::RequestsController < ApplicationController
   before_action :set_request, only: [:show, :destroy, :update]
 
   def index
-    @requests = Request.list_request.paginate page: params[:page]
+    @requests = Request.sort_request.paginate page: params[:page]
   end
 
   def show

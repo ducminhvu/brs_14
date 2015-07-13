@@ -12,7 +12,7 @@ end
   author = Faker::Name.name
   bought = rand(2) == 1 ? true : false
   Request.create!(book_name: name, description: description,
-    author: author, user_id: n+2, bought: bought)
+    author: author, user_id: 1, bought: bought)
 end
 
 5.times do |n|

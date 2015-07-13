@@ -45,10 +45,11 @@ en:
   characters_minimum: "Characters minimum"
   sessions: "sessions"
   registrations: "sessions"
+  request: "My requests"
   edit: "Edit"
-  users: "users"
-  profile: "profile"
-  settings: "settings"
+  users: "Users"
+  profile: "Profile"
+  settings: "Settings"
   admin:
     book:
       new: "New Book"
@@ -108,3 +109,15 @@ en:
   unfollow: "UnFollow"
   following: "Following"
   followers: "Followers"
+  requests:
+    index:
+      title: "My requests"
+      book_name: "Book name"
+      author: "Author"
+      description: "Description"
+      status: "Status"
+      accepted: "Accepted"
+      sending: "Sending"
+    request:
+      delete: "Delete"
+      delete_confirm: "Are you sure?"

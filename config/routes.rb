@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   resources :books do
     resources :reviews
   end
+  resources :users do
+    resources :requests
+  end
+  
   namespace :admin do
     root "dashboards#index"
     resources :books
