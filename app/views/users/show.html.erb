@@ -1,0 +1,11 @@
+<% provide :title, @user.name %>
+<h1><%= t "activities" %></h1>
+<div class="row">
+  <aside class="col-md-4">
+    <%= render "users/show_follow" %>
+  </aside>
+  <div class="col-md-8">
+    <%= render "follow_form" unless current_user == @user %>
+    <hr>
+  </div>
+</div>
