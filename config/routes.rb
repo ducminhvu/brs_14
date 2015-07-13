@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "static_pages#home"
+  
+  root "books#index"
   get "help" => "static_pages#help"
   get "about" => "static_pages#about"
   get "logout" => "devise/sessions#destroy"
