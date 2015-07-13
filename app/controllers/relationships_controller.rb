@@ -1,5 +1,4 @@
 class RelationshipsController < ApplicationController
-
   def index
     @user = User.find params[:id]
     if Settings.setting.follow_type.include? params[:type]

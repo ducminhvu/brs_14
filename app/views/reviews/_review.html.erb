@@ -6,8 +6,13 @@
   <%= review.thesis_statement %><br>
 </span>
 <i>
-  <%= t "post" %><%= time_ago_in_words(review.created_at) %><%= t "ago" %>
+<%= t("time_ago", count: time_ago_in_words(review.created_at)) %>
 </i>
 <% if current_user == review.user %>
   <%= link_to t("delete"), review, method: :delete %>
 <% end %>
+<%= render "comments/form", review: review %>
+<br>
+<span id="comments_of_review_<%= review.id %>">
+  <%= render review.comments %>
+</span>

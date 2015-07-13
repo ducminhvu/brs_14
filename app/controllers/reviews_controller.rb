@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   after_action :average_rate, only: :create
+
   def create
     @review = current_user.reviews.build review_params
     @review.book_id = params[:book_id]
