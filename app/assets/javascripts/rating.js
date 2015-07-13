@@ -11,4 +11,9 @@ $(function() {
     path: "/assets/",
     scoreName: "review[rating]"
   });
+
+  $(" .star-rating-filter").raty({
+    path: "/assets/",
+    scoreName: "query[rating_eq]"
+  });  
 });

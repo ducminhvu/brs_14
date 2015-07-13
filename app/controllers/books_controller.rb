@@ -1,8 +1,9 @@
 class BooksController < ApplicationController
   def index
     @categories = Category.all
-    @q = Book.ransack params[:query]
-    @books = @q.result(distinct: true).paginate page: params[:page], per_page: Settings.length.page
+    books = params[:favorites].present? ? current_user.favorited_books : Book.all
+    @q = books.ransack params[:query]
+    @books = @q.result.paginate page: params[:page], per_page: Settings.length.page_book
   end
 
   def show

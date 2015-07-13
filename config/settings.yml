@@ -4,6 +4,7 @@ admin:
     update: "Updated success !"
 length:
   page: 10
+  page_book: 12
 picture:
   max_size: 5
   width: "160"

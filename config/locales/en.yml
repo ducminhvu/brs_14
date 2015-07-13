@@ -126,3 +126,4 @@ en:
     new_request_form:
       send: "Send request"
       close: "Close"
+  search: "Search"
