@@ -1,6 +1,7 @@
 <hr>
 <span><%= link_to review.user.email, review.user %></span>
 <span class="content">
+  <div class = "star-rating" data-score= <%= review.rating %> ></div>
   <%= review.content %><br>
   <%= review.thesis_statement %><br>
 </span>
