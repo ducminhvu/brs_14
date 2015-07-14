@@ -11,6 +11,8 @@ class Book < ActiveRecord::Base
   validates :number_page, numericality: {only_integer: true}
   validate :picture_size
 
+  scope :reading, ->user{where "id IN (SELECT book_id FROM readings WHERE user_id = ? )",user.id}
+
   private
   def picture_size
     if picture.size > Settings.picture.max_size.megabytes
