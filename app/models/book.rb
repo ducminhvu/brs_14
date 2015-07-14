@@ -7,7 +7,7 @@ class Book < ActiveRecord::Base
 
   mount_uploader :picture, PictureUploader
   
-  validates :category, presence: true 
+  validates :category, presence: true
   validates :number_page, numericality: {only_integer: true}
   validate :picture_size
 

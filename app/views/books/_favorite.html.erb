@@ -1,0 +1,4 @@
+<% @favorite ||= current_user.favorites.find_by book_id: @book.id %>
+<%= link_to @favorite, method: :delete, remote: true do %>
+  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+<% end %>

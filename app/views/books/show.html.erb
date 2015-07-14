@@ -28,6 +28,7 @@
       <%= @book.description %>
     </p>
     <p>
+      <%= render "favorite_form" %>
       <div class = "star-rating" data-score= <%= @book.rating %> ></div>
     </p>
     <p>
