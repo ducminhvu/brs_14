@@ -1,0 +1,9 @@
+<div class="row-fluid">
+  <div class="col-md-2">
+    <%= link_to image_tag(book.picture.url, height: Settings.picture.height, width: Settings.picture.width), book if reading.book.picture? %>
+    <b><%= reading.book.title %></b>
+    <br>
+    <%= t "book.author" %>:
+    <%= reading.book.author %>
+  </div>
+</div>
