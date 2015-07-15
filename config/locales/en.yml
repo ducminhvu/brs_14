@@ -109,6 +109,7 @@ en:
   unfollow: "UnFollow"
   following: "Following"
   followers: "Followers"
+  favorite: "Favorite books"
   requests:
     index:
       title: "My requests"
