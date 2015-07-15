@@ -19,6 +19,7 @@ gem "bootstrap-will_paginate", "0.0.10"
 gem "will_paginate", "3.0.7"
 gem "faker", "1.4.2"
 gem "ransack"
+gem "jquery-turbolinks"
 
 group :development, :test do
   gem "byebug"

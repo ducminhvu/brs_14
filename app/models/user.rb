@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :favorites, dependent: :destroy
   has_many :requests, dependent: :destroy
   has_many :activities, dependent: :destroy
+  has_many :favorited_books, through: :favorites, source: :book
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
                                   dependent: :destroy

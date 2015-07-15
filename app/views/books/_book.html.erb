@@ -1,6 +1,7 @@
 <div class="row-fluid">
-  <div class="col-md-2">
+  <div class="col-md-3">
     <%= link_to image_tag(book.picture.url, height: Settings.picture.height, width: Settings.picture.width), book if book.picture? %>
+    <br>
     <b><%= book.title %></b>
     <br>
     <%= t "book.author" %>:
