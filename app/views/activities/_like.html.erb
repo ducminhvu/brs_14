@@ -1,0 +1,4 @@
+<%= form_for [object, Like.new], html: {class: "form-inline"},
+  remote: true do |f| %>
+  <%= f.submit t(".like"), class: "submitLink", title: t(".like_message") %>
+<% end %>

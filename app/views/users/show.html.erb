@@ -1,5 +1,5 @@
 <% provide :title, @user.name %>
-<h1><%= t "activities" %></h1>
+<h1><%= t ".activities" %></h1>
 <div class="row">
   <aside class="col-md-4">
     <%= render "users/show_follow" %>
@@ -8,8 +8,9 @@
     </div>
   </aside>
   <div class="col-md-8">
-    <hr>
-    <%= render @activities %>
+    <ul class="activities">
+      <%= render @activities %>
+    </ul>
+    <%= will_paginate @activities %>
   </div>
-  <%= will_paginate @activities %>
 </div>

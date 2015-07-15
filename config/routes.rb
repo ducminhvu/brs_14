@@ -21,6 +21,9 @@ Rails.application.routes.draw do
     resources :requests
     resources :favorites, only: [:index]
   end
+  resources :activities do
+    resources :likes, only: [:create, :destroy]
+  end
 
   namespace :admin do
     root "dashboards#index"
