@@ -12,6 +12,6 @@ class Favorite < ActiveRecord::Base
   end
 
   def activity_unfavorite
-    activity_destroy "#{self.user.name} remoted #{self.book.title} from his favorite books"
+    activity_create "#{self.user.name} remoted #{self.book.title} from his favorite books"
   end
 end

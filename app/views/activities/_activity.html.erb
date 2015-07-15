@@ -1,2 +1,10 @@
 <%= activity.action %>
+<br>
+<center>
+  <i>
+    ---
+    <%= t("activity_ago", count: time_ago_in_words(activity.created_at)) %>
+    ---
+  </i>
+</center>
 <hr>
