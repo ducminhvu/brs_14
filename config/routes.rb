@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  
+
   root "books#index"
   get "help" => "static_pages#help"
   get "about" => "static_pages#about"
@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :readings, only: :index
   resources :books, only: [:index, :show]
   resources :reviews, only: :destroy
-  resources :users
   resources :relationships, only: [:create, :destroy]
   resources :books do
     resources :reviews
@@ -17,8 +16,9 @@ Rails.application.routes.draw do
   resources :favorites, only: [:create, :destroy]
   resources :users do
     resources :requests
+    resources :favorites, only: [:index]
   end
-  
+
   namespace :admin do
     root "dashboards#index"
     resources :books

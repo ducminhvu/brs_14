@@ -1,0 +1,6 @@
+<% provide :title, @user.name + t(".title") %>
+<h2><%= @user.name + t(".title") %></h2>
+<div class="row">
+  <%= render @books %>
+  <%= will_paginate @books %>
+</div>

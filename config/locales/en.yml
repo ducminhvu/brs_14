@@ -127,3 +127,6 @@ en:
       send: "Send request"
       close: "Close"
   search: "Search"
+  favorites:
+    index:
+      title: "'s favorite books"

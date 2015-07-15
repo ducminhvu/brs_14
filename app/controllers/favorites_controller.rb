@@ -1,4 +1,9 @@
 class FavoritesController < ApplicationController
+  def index
+    @user = User.find_by id: params[:user_id]
+    @books = @user.favorited_books.paginate page: params[:page]
+  end
+
   def create
     @book = Book.find_by id: params[:book_id]
     @favorite = Favorite.new favorite_params
