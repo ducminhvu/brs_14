@@ -27,3 +27,5 @@ end
   Book.create!(title: title, description: description, category_id: category_id,
     number_page: 12)
 end
+
+Favorite.create!(user_id: 1, book_id: 1)
