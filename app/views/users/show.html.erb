@@ -3,9 +3,12 @@
 <div class="row">
   <aside class="col-md-4">
     <%= render "users/show_follow" %>
+    <div class="col-md-4">
+      <%= render "follow_form" unless current_user == @user %>
+    </div>
   </aside>
   <div class="col-md-8">
-    <%= render "follow_form" unless current_user == @user %>
     <hr>
+    <%= render @user.activities %>
   </div>
 </div>
