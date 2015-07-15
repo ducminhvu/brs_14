@@ -21,7 +21,7 @@ end
 end
 
 20.times do |n|
-  title  = Faker::Name.name
+  title  = Faker::Lorem.sentence 1
   description = "test-#{n+1}@brs.com"
   category_id = 1
   Book.create!(title: title, description: description, category_id: category_id,
