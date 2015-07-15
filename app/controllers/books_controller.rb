@@ -9,6 +9,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find params[:id]
     @review = @book.reviews.build
+    @comment = Comment.new
     @reviews = @book.reviews.paginate page: params[:page], per_page: Settings.length.page
   end
 end

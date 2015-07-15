@@ -1,0 +1,12 @@
+<div class="comment_<%= comment.id %>">
+  <hr>
+  <span><%= link_to comment.user.email, comment.user %></span>
+  <span class="content">
+    <%= comment.content %><br>
+  </span>
+  <span>
+    <i>
+      <%= t("time_ago", count: time_ago_in_words(comment.created_at)) %>
+    </i>
+  </span>
+</div>

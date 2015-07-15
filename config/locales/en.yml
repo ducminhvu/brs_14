@@ -99,7 +99,7 @@ en:
     author: "Author"
   title: "Title"
   compose_new_body: "Compose new body...."
-  post: "Post"
+  post: "Post "
   you_sure: "You Sure?"
   ago: " ago."
   review_created: "Review Created"
@@ -130,3 +130,5 @@ en:
   favorites:
     index:
       title: "'s favorite books"
+  comment: "comment"
+  time_ago: "Post %{count} ago."
