@@ -1,8 +1,12 @@
 <div class="container">
+  <br>
   <div class="col-md-4">
     <p id="notice"><%= notice %></p>
-    <%= image_tag(@book.picture.url, height: Settings.picture.height_n, 
-      width: Settings.picture.width_n) if @book.picture? %>
+    <% if @book.picture? %>
+      <%= image_tag(@book.picture.url, height: Settings.picture.height_n, width: Settings.picture.width_n, class: "book-cover") %>
+    <% else %>
+      <%= image_tag(Settings.default_image, height: Settings.picture.height_n, width: Settings.picture.width_n, class: "book-cover") %>
+    <% end %>
     <p>
       <strong><%= t "title.title" %>:</strong>
       <%= @book.title %>
@@ -24,32 +28,37 @@
       <%= @book.number_page %>
     </p>
     <p>
-      <strong><%= t "title.description" %>:</strong>
-      <%= @book.description %>
-    </p>
-    <p>
-      <%= render "favorite_form" %>
+      <%= render "favorite_form" if signed_in? %>
       <div class = "star-rating" data-score= <%= @book.rating %> ></div>
     </p>
     <p>
       <div class="col-md-12">
         <div class="btn-group">
-          <%= render "reading" %>
+          <%= render "reading" if signed_in? %>
         </div>
       </div>
     </p>
   </div>
   <div class="col-md-8">
-    <%= form_for [@book, @review], html: {multipart: true} do |f| %>
-      <div class="field">
-        <div class = "star-rating-review"></div>
-        <%= f.text_field :content, placeholder: t("title"), class: "form-control" %>
-        <%= f.text_area :thesis_statement, placeholder: t("compose_new_body"),
-          class: "form-control" %>
-      </div>
-      <div class="col-md-2">
-        <%= f.submit t("post"), class: "btn btn-primary" %>
-      </div>
+    <p>
+      <div class="title-head"><%= t "title.description" %></div>
+      <div class="text-justify"><em><%= @book.description %></div>
+    </p>
+    <br>
+    <% if signed_in? %>
+      <div class="title-head"><%= t("title.write_review") %></div>
+      <%= form_for [@book, @review], html: {multipart: true} do |f| %>
+        <div class="field">
+          <div class = "star-rating-review"></div>
+          <br>
+          <%= f.text_field :content, placeholder: t("title"), class: "form-control" %>
+          <%= f.text_area :thesis_statement, placeholder: t("compose_new_body"),
+            class: "form-control" %>
+        </div>
+        <div class="col-md-2">
+          <%= f.submit t("post"), class: "btn btn-default" %>
+        </div>
+      <% end %>
     <% end %>
     <br>
     <%= render @reviews %>

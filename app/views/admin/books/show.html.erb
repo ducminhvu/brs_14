@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+<% if @book.picture? %>
+  <%= image_tag(@book.picture.url, height: Settings.picture.height_n, width: Settings.picture.width_n, class: "book-cover") %>
+<% else %>
+  <%= image_tag(Settings.default_image, height: Settings.picture.height_n, width: Settings.picture.width_n, class: "book-cover") %>
+<% end %>
 <p>
   <strong><%= t "title.title" %>:</strong>
   <%= @book.title %>
@@ -22,10 +27,6 @@
 <p>
   <strong><%= t "title.description" %>:</strong>
   <%= @book.description %>
-</p>
-<p>
-  <strong><%= t "title.picture" %>:</strong>
-  <%= image_tag @book.picture.url if @book.picture? %>
 </p>
 <%= link_to t("features.edit"), edit_admin_book_path(@book) %> |
 <%= link_to t("features.back"), admin_books_path %>

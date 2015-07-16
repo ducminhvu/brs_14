@@ -23,11 +23,12 @@ en:
   title:
     title: "Title"
     category_name: "Category name"
-    publish_date: 
+    publish_date: "Publish date"
     author: "Author"
     number_page: "Number page"
     description: "Description"
     picture: "Picture"
+    write_review: "Write review"
   submit: "submit"
   error:
     picture_size: "should be less than 5MB"
@@ -97,6 +98,8 @@ en:
     category: "Category"
     publish_date: "Publish date"
     author: "Author"
+    mark-reading: "Mark reading"
+    mark-read: "Mark read"
   title: "Title"
   compose_new_body: "Compose new body...."
   post: "Post "
@@ -152,3 +155,4 @@ en:
       unlike: "Unlike"
       unlike_message: "Unlike this"
   like_status: " people like this"
+  dashboard: "Dashboard"

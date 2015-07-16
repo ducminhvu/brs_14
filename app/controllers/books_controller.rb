@@ -11,6 +11,6 @@ class BooksController < ApplicationController
     @review = @book.reviews.build
     @comment = Comment.new
     @reviews = @book.reviews.paginate page: params[:page], per_page: Settings.length.page
-    @reading = Reading.find_by book_id: @book.id, user_id: current_user.id
+    @reading = Reading.find_by book_id: @book.id, user_id: current_user.id if signed_in?
   end
 end
