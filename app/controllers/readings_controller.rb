@@ -1,5 +1,5 @@
 class ReadingsController < ApplicationController
   def index
-    @readings = Book.reading current_user
+    @readings = current_user.reading_books
   end
 end
