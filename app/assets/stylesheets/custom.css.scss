@@ -13,8 +13,10 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  font-size: 18px;
+  font-size: 14px;
   padding-top: 60px;
+  background-color: #ECF0F1;
+  font-family: Gill Sans, Verdana;
 }
 section {
   overflow: auto;
@@ -304,15 +306,80 @@ input {
 }
 
 .glyphicon-thumbs-up{
-  color:blue;
+  color: #1F3A93;
 }
 
 .submitLink {
   background-color: transparent;
   border: none;
-  color: blue;
+  color: #1F3A93;
   cursor: pointer;
   &:hover {
-    text-decoration: underline;    
+    text-decoration: underline;
   }
+}
+
+.book-cover{
+  box-shadow: 0px 0px 5px rgba(0, 0, 1, 1);
+}
+
+.name_book {
+  clear: both;
+  color: #333;
+  font-weight: bold;
+  height: 25px;
+  line-height: 30px;
+  margin: 10px 0px;
+  overflow: hidden;
+  padding: 0px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 86%;
+}
+
+.name_book a{
+  text-decoration: none;
+  color: black;
+  font: arial;
+}
+
+.name_book a:hover{
+  color: #95a5a6;
+}
+
+.author {
+  height: 20px;
+  overflow: hidden;
+  margin-top: -5px;
+  color: #e74c3c;
+  width: 177px;
+}
+
+.book{
+  width: 300px;
+  height: 400px;
+}
+
+.name-tag {
+  height: 20px;
+  overflow: hidden;
+  margin-top: -5px;
+  color: black;
+  width: 177px;
+}
+
+.search{
+  margin: 5px 5px 5px 5px;
+}
+
+.favorite{
+  font-size: 22px;
+}
+
+.title-head{
+  font-size: 28px;
+}
+
+.text-justify{
+  text-align: justify;
 }

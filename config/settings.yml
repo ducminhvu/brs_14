@@ -7,8 +7,8 @@ length:
   page_book: 12
 picture:
   max_size: 5
-  width: "160"
-  height: "224"
+  width: "200"
+  height: "280"
   width_n: "320"
   height_n: "448"
 image_type:
@@ -29,7 +29,10 @@ setting:
   following: following
   followers: followers
 requests_per_page: 10
-
+title_length: 25
+description_length: 30
 reads:
   - "reading"
   - "read"
+default_image:
+  "/Book-cover-black.jpg"

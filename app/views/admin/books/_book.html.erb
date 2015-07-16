@@ -4,7 +4,7 @@
   <td><%= book.publish_date %></td>
   <td><%= book.author %></td>
   <td><%= book.number_page %></td>
-  <td><%= book.description %></td>
+  <td><%= truncate(book.description, length: Settings.description_length) %></td>
   <td><%= book.picture %></td>
   <td><%= link_to t("features.show"), [:admin, book] %></td>
   <td><%= link_to t("features.edit"), edit_admin_book_path(book) %></td>

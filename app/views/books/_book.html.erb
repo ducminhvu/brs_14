@@ -1,10 +1,17 @@
 <div class="row-fluid">
   <div class="col-md-3">
-    <%= link_to image_tag(book.picture.url, height: Settings.picture.height, width: Settings.picture.width), book if book.picture? %>
-    <br>
-    <b><%= book.title %></b>
-    <br>
-    <%= t "book.author" %>:
-    <%= book.author %>
+    <div class="book">
+      <% if book.picture? %>
+        <%= link_to image_tag(book.picture.url, height: Settings.picture.height, width: Settings.picture.width, class: "book-cover"), book %>
+      <% else %>
+        <%= link_to image_tag(Settings.default_image, height: Settings.picture.height, width: Settings.picture.width, class: "book-cover"), book %>
+      <% end %>
+      <br>
+      <div class="name_book"><%= link_to truncate(book.title, length: Settings.title_length), book %></div>
+      <%= t "book.author" %>:
+      <span class="author">
+        <%= book.author %>
+      </span>
+    </div>
   </div>
 </div>
