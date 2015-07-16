@@ -1,4 +1,6 @@
 class ReadingsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @readings = current_user.reading_books
   end
