@@ -1,4 +1,6 @@
 class FavoritesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @user = User.find_by id: params[:user_id]
     @books = @user.favorited_books.paginate page: params[:page]

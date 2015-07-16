@@ -1,4 +1,6 @@
 class RequestsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @requests = Request.list_request_of(current_user).sort_request
       .paginate page: params[:page], per_page: Settings.requests_per_page

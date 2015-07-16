@@ -1,4 +1,5 @@
 class Admin::BooksController < ApplicationController
+  before_action :required_admin
   before_action :get_categories, only: [:new, :create, :edit]
 
   def index

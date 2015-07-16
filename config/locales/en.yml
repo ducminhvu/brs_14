@@ -7,7 +7,7 @@ en:
     news: "New"
     about: "About"
     about_us: "About us"
-    title: "Test App"
+    title: "Brs 14"
     sign_up: "Sign up now"
     intro_about: "The Ruby on Rails Tutorial is a project to make a book and screencasts to teach web development with Ruby on Rails"
     intro_home: "Welcome to the Test App"
@@ -138,9 +138,12 @@ en:
   layouts:
     header:
       users: "Users"
+      favorite_book: "My favorite books"
   users:
     show:
       activities: "Activities"
+    index:
+      index_title: "List all users"
   activities:
     like:
       like: "Like"
