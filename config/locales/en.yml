@@ -100,6 +100,7 @@ en:
     author: "Author"
     mark-reading: "Mark reading"
     mark-read: "Mark read"
+    favorite:
   title: "Title"
   compose_new_body: "Compose new body...."
   post: "Post "
@@ -113,6 +114,7 @@ en:
   following: "Following"
   followers: "Followers"
   favorite: "Favorite books"
+  request_invalid: "Request invalid, please fill full name and author of your book request"
   requests:
     index:
       title: "My requests"
@@ -156,3 +158,8 @@ en:
       unlike_message: "Unlike this"
   like_status: " people like this"
   dashboard: "Dashboard"
+  books:
+    unfavorite:
+      add_favorite: "Add to favorite books"
+    favorite:
+      remove_favorite: "Remove from favorite"

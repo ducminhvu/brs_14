@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new request_params
-    @request.save
+    flash[:danger] = t "request_invalid" unless @request.save
     redirect_to :back
   end
 
