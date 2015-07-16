@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "about" => "static_pages#about"
   get "logout" => "devise/sessions#destroy"
 
-  resources :readings, only: :index
+  resources :readings, only: [:index, :edit, :create]
   resources :books, only: [:index, :show]
   resources :reviews, only: :destroy
   resources :relationships, only: [:create, :destroy]
