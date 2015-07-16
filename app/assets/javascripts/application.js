@@ -16,3 +16,4 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+//= require best_in_place

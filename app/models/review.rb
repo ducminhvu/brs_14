@@ -8,6 +8,7 @@ class Review < ActiveRecord::Base
   after_create :activity_review
 
   scope :average_rated, ->book{where("book_id = ?",book.id).average("rating")}
+  scope :review, ->{order created_at: :DESC}
 
   private
   def activity_review
