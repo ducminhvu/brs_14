@@ -20,6 +20,7 @@ gem "will_paginate", "3.0.7"
 gem "faker", "1.4.2"
 gem "ransack"
 gem "jquery-turbolinks"
+gem "cancancan", "~> 1.10"
 
 group :development, :test do
   gem "byebug"

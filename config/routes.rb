@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :readings, only: [:index, :edit, :create]
   resources :books, only: [:index, :show]
   resources :reviews, only: :destroy
+  resources :comments, only: :destroy
   resources :relationships, only: [:create, :destroy]
   resources :books do
     resources :reviews

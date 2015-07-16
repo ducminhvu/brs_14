@@ -8,5 +8,8 @@
     <i>
       <%= t("time_ago", count: time_ago_in_words(comment.created_at)) %>
     </i>
+    <% if can?(:destroy, comment) %>
+      <%= link_to t("delete"), comment, method: :delete %>
+    <% end %>
   </span>
 </div>

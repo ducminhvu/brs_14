@@ -8,7 +8,7 @@
 <i>
 <%= t("time_ago", count: time_ago_in_words(review.created_at)) %>
 </i>
-<% if current_user == review.user %>
+<% if can?(:destroy, review) %>
   <%= link_to t("delete"), review, method: :delete %>
 <% end %>
 <%= render "comments/form", review: review %>
