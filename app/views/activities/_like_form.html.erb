@@ -1,0 +1,11 @@
+<span class="glyphicon glyphicon-thumbs-up" aria-hidden="false"></span>
+<div id="like-count-<%= object.id %>" class="form-inline">
+  <%= object.liker.count.to_s + t("like_status") %>
+</div>
+<div id="activity-form-<%= object.id %>" class="form-inline">
+  <% if object.liker.include? current_user %>
+    <%= render "activities/unlike", object: object %>
+  <% else %>
+    <%= render "activities/like", object: object %>
+  <% end %>
+</div>

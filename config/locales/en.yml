@@ -135,3 +135,17 @@ en:
   time_ago: "Post %{count} ago."
   activity_ago: "%{count} ago."
   reading: "Reading books"
+  layouts:
+    header:
+      users: "Users"
+  users:
+    show:
+      activities: "Activities"
+  activities:
+    like:
+      like: "Like"
+      like_message: "Like this"
+    unlike:
+      unlike: "Unlike"
+      unlike_message: "Unlike this"
+  like_status: " people like this"

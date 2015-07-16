@@ -58,7 +58,6 @@ ActiveRecord::Schema.define(version: 20150709013752) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer  "status"
     t.integer  "user_id"
     t.integer  "activity_id"
     t.datetime "created_at",  null: false

@@ -292,3 +292,27 @@ input {
 .glyphicon-heart-empty{
   color:red;
 }
+
+.activities {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid gray;
+  }
+}
+
+.glyphicon-thumbs-up{
+  color:blue;
+}
+
+.submitLink {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;    
+  }
+}
