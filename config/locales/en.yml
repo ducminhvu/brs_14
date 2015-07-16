@@ -134,3 +134,4 @@ en:
   comment: "comment"
   time_ago: "Post %{count} ago."
   activity_ago: "%{count} ago."
+  reading: "Reading books"
