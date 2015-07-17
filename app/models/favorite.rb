@@ -8,10 +8,10 @@ class Favorite < ActiveRecord::Base
 
   private
   def activity_favorite
-    activity_create "#{self.user.name} added #{self.book.title} to his favorite books"
+    activity_create :mark_favorite, self.user
   end
 
   def activity_unfavorite
-    activity_create "#{self.user.name} remoted #{self.book.title} from his favorite books"
+    activity_create :mark_unfavorite, self.user
   end
 end

@@ -37,3 +37,10 @@ reads:
 default_image:
   "/Book-cover-black.jpg"
 week_back: 1
+action_type:
+  - "follow"
+  - "mark_read"
+  - "mark_favorite"
+  - "mark_unfavorite"
+  - "write_review"
+  - "write_comment"
