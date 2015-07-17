@@ -39,6 +39,7 @@ default_image:
 week_back: 1
 action_type:
   - "follow"
+  - "unfollow"
   - "mark_read"
   - "mark_favorite"
   - "mark_unfavorite"

@@ -9,6 +9,6 @@ class Reading < ActiveRecord::Base
 
   private
   def activity_read
-    activity_create "#{self.user.name} has read \"#{self.book.title}\" book" if self.status == Settings.reads[1]
+    activity_create :mark_read, self.user
   end
 end
