@@ -43,3 +43,4 @@ action_type:
   - "mark_favorite"
   - "write_review"
   - "write_comment"
+mail_default: "invisible.masks@gmail.com"
