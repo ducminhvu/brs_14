@@ -7,4 +7,7 @@ namespace :admin do
       password_confirmation: "foobar11111",
       role: "admin"
   end
+  task delete_request: :environment do
+    Request.request_accepted_oneweekago.destroy_all
+  end
 end
