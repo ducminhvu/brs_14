@@ -13,6 +13,8 @@
 <% end %>
 <%= render "comments/form", review: review %>
 <br>
-<span id="comments_of_review_<%= review.id %>">
-  <%= render review.comments %>
-</span>
+<div class="col-md-10 col-md-offset-1">
+  <div id="comments_of_review_<%= review.id %>" class="row">
+    <%= render review.comments.comment %>
+  </div>
+</div>

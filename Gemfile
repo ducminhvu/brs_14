@@ -21,6 +21,7 @@ gem "faker", "1.4.2"
 gem "ransack"
 gem "jquery-turbolinks"
 gem "cancancan", "~> 1.10"
+gem "best_in_place"
 
 group :development, :test do
   gem "byebug"

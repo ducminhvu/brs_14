@@ -2,7 +2,7 @@
   <hr>
   <span><%= link_to comment.user.email, comment.user %></span>
   <span class="content">
-    <%= comment.content %><br>
+    <%= best_in_place comment, :content %><br>
   </span>
   <span>
     <i>
