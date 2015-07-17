@@ -8,4 +8,5 @@ class Request < ActiveRecord::Base
   scope :requesting, ->{where bought: false}
   scope :requesting_of, ->user{where user_id: user.id, bought: false}
   scope :list_request_of, ->user{where user_id: user.id}
+  scope :request_accepted_oneweekago, ->{where "bought = \"t\" AND updated_at < ?", Settings.week_back.week.ago}
 end

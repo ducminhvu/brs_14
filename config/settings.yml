@@ -36,3 +36,4 @@ reads:
   - "read"
 default_image:
   "/Book-cover-black.jpg"
+week_back: 1
