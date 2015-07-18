@@ -157,3 +157,11 @@ en:
   like_status: " people like this"
   dashboard: "Dashboard"
   invalid_request: "Invalid request, Please fill full name and author of your request book!"
+  activity:
+    follow: " has followed "
+    mark_read: " is reading "
+    mark_favorite_p1: " added "
+    mark_favorite_p2: " to his favorite books"
+    write_review: " wrote a review on "
+    write_comment_p1: " commented on "
+    write_comment_p2: "'s review on "

@@ -5,10 +5,15 @@ class Reading < ActiveRecord::Base
 
   belongs_to :book
   belongs_to :user
-  after_save :activity_read
+  after_create :activity_read
+  after_destroy :activity_unread
 
   private
   def activity_read
-    activity_create "#{self.user.name} has read \"#{self.book.title}\" book" if self.status == Settings.reads[1]
+    activity_create :mark_read, self.user
+  end
+
+  def activity_unread
+    activity_destroy
   end
 end

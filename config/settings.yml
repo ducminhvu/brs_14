@@ -41,6 +41,5 @@ action_type:
   - "follow"
   - "mark_read"
   - "mark_favorite"
-  - "mark_unfavorite"
   - "write_review"
   - "write_comment"
