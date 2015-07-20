@@ -12,6 +12,6 @@ class Relationship < ActiveRecord::Base
   end
 
   def activity_unfollow
-    activity_destroy
+    activity_destroy "follow"
   end
 end

@@ -13,6 +13,6 @@ class Comment < ActiveRecord::Base
   end
 
   def activity_delete_comment
-    activity_destroy
+    activity_destroy "write_comment"
   end
 end

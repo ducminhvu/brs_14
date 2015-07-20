@@ -12,6 +12,6 @@ class Favorite < ActiveRecord::Base
   end
 
   def activity_unfavorite
-    activity_destroy
+    activity_destroy "mark_favorite"
   end
 end
