@@ -1,13 +1,13 @@
 class Admin::BooksController < ApplicationController
   before_action :required_admin
-  before_action :get_categories, only: [:new, :create, :edit]
+  before_action :find_categories, only: [:new, :create, :edit]
+  before_action :find_book, except: [:index, :new, :create]
 
   def index
     @books = Book.paginate page: params[:page], per_page: Settings.length.page
   end
 
   def show
-    @book = Book.find params[:id]
   end
 
   def new
@@ -24,20 +24,17 @@ class Admin::BooksController < ApplicationController
   end
 
   def edit
-    @book = Book.find params[:id]
   end
 
   def update
-    @book = Book.find params[:id]
     if @book.update_attributes book_params
       redirect_to [:admin, @book], notice: t("admin.book.update_success")
     else
-    render "edit"
+      render "edit"
     end
   end
 
   def destroy
-    @book = Book.find params[:id]
     if @book.destroy
       flash[:success] = t "admin.book.delete_success"
     else
@@ -47,12 +44,16 @@ class Admin::BooksController < ApplicationController
   end
 
   private
-  def get_categories
+  def find_categories
     @categories = Category.all
   end
 
   def book_params
     params.require(:book).permit :title, :publish_date, :category_id,
       :author, :number_page, :description, :picture
+  end
+
+  def find_book
+    @book = Book.find params[:id]
   end
 end

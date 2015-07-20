@@ -1,12 +1,13 @@
 class Admin::CategoriesController < ApplicationController
   before_action :required_admin
+  before_action :find_category, except: [:index, :new, :create]
 
   def index
-    @categories = Category.paginate page: params[:page], per_page: Settings.length.page
+    @categories = Category.paginate page: params[:page],
+      per_page: Settings.length.page
   end
 
   def show
-    @category = Category.find params[:id]
   end
 
   def new
@@ -23,11 +24,9 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.find params[:id]
   end
 
   def update
-    @category = Category.find params[:id]
     if @category.update_attributes category_params
       redirect_to [:admin, @category], notice: t("admin.category.update_success")
     else
@@ -36,7 +35,6 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find params[:id]
     if @category.destroy
       flash[:success] = t "admin.category.delete_success"
     else
@@ -48,5 +46,9 @@ class Admin::CategoriesController < ApplicationController
   private
   def category_params
     params.require(:category).permit :name, :content
+  end
+
+  def find_category
+    @category = Category.find params[:id]
   end
 end

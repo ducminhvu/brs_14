@@ -1,6 +1,6 @@
 class Admin::UsersController < ApplicationController
   before_action :required_admin
-  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :find_user, only: [:edit, :update, :destroy]
   
   def index
     @users = User.paginate page: params[:page]
@@ -50,7 +50,7 @@ class Admin::UsersController < ApplicationController
       :password_confirmation, :picture
   end
 
-  def set_user
+  def find_user
     @user = User.find params[:id]
   end
 end
