@@ -14,6 +14,6 @@ class Reading < ActiveRecord::Base
   end
 
   def activity_unread
-    activity_destroy
+    activity_destroy "mark_read"
   end
 end

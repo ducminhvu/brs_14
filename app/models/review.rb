@@ -17,6 +17,6 @@ class Review < ActiveRecord::Base
   end
 
   def activity_delete_review
-    activity_destroy
+    activity_destroy "write_review"
   end
 end
