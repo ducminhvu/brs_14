@@ -1,6 +1,6 @@
 class Admin::RequestsController < ApplicationController
   before_action :required_admin
-  before_action :set_request, only: [:show, :destroy, :update]
+  before_action :find_request, only: [:show, :destroy, :update]
 
   def index
     @requests = Request.sort_request.paginate page: params[:page]
@@ -27,7 +27,7 @@ class Admin::RequestsController < ApplicationController
   end
 
   private
-  def set_request
+  def find_request
     @request = Request.find params[:id]
   end
 end
