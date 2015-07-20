@@ -165,3 +165,5 @@ en:
     write_review: " wrote a review on "
     write_comment_p1: " commented on "
     write_comment_p2: "'s review on "
+  email:
+    subject: "Email Subject"
