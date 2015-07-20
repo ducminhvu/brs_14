@@ -40,6 +40,6 @@ class User < ActiveRecord::Base
   end
 
   def send_notification_email
-    UserMailer.delay.notification(self)
+    UserMailer.delay.notification self
   end
 end
