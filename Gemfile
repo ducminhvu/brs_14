@@ -26,6 +26,7 @@ gem "whenever", require: false
 gem "delayed_job"
 gem "delayed_job_active_record"
 gem "daemons"
+gem "sidekiq"
 
 group :development, :test do
   gem "byebug"
