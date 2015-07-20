@@ -8,10 +8,10 @@ class Relationship < ActiveRecord::Base
 
   private
   def activity_follow
-    activity_create "#{self.follower.name} has followed #{self.followed.name}"
+    activity_create :follow, self.follower
   end
 
   def activity_unfollow
-    activity_create "#{self.follower.name} has unfollowed #{self.followed.name}"
+    activity_destroy
   end
 end
