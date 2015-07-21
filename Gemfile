@@ -24,6 +24,8 @@ gem "cancancan", "~> 1.10"
 gem "best_in_place"
 gem "whenever", require: false
 gem "delayed_job"
+gem "delayed_job_active_record"
+gem "daemons"
 
 group :development, :test do
   gem "byebug"

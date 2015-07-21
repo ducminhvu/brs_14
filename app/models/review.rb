@@ -4,6 +4,7 @@ class Review < ActiveRecord::Base
   belongs_to :book
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :comment_users, through: :comments, source: :user
 
   after_create :activity_review
   after_destroy :activity_delete_review

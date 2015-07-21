@@ -24,8 +24,9 @@ end
   title  = Faker::Lorem.sentence 1
   description = "test-#{n+1}@brs.com"
   category_id = 1
+  publish_date = Faker::Date.forward(1000)
   Book.create!(title: title, description: description, category_id: category_id,
-    number_page: 12)
+    publish_date: publish_date, number_page: 12)
 end
 
 Favorite.create!(user_id: 1, book_id: 1)
