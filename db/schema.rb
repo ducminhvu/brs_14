@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20150720025240) do
     t.datetime "updated_at",         null: false
   end
 
+  add_index "activities", ["action_type", "object_relative_id"], name: "index_activities_on_action_type_and_object_relative_id", unique: true
+
   create_table "books", force: :cascade do |t|
     t.string   "title"
     t.datetime "publish_date"
@@ -73,6 +75,8 @@ ActiveRecord::Schema.define(version: 20150720025240) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "favorites", ["user_id", "book_id"], name: "index_favorites_on_user_id_and_book_id", unique: true
 
   create_table "likes", force: :cascade do |t|
     t.integer  "user_id"

@@ -1,6 +1,6 @@
 $(function() {
   $(" .star-rating").raty({
-    path: "/assets/",
+    path: "/",
     readOnly: true,
     score: function(){
       return $(this).attr("data-score");
@@ -8,12 +8,12 @@ $(function() {
   });
   
   $(" .star-rating-review").raty({
-    path: "/assets/",
+    path: "/",
     scoreName: "review[rating]"
   });
 
   $(" .star-rating-filter").raty({
-    path: "/assets/",
+    path: "/",
     scoreName: "query[rating_eq]"
   });  
 });

@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
 
   belongs_to :review
   belongs_to :user
-  after_create :activity_comment, :send_notification
+  after_create :activity_comment#, :send_notification
   after_destroy :activity_delete_comment
 
   scope :comment, ->{order created_at: :DESC}
