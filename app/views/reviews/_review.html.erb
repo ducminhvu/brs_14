@@ -1,22 +1,30 @@
 <div id="review_<%= review.id %>">
   <hr>
-  <span><%= link_to review.user.email, review.user %></span>
-  <span class="content">
-    <div class = "star-rating" data-score= <%= review.rating %> ></div>
-    <%= review.content %><br>
-    <%= review.thesis_statement %><br>
-  </span>
-  <i>
-    <%= t("time_ago", count: time_ago_in_words(review.created_at)) %>
-  </i>
-  <% if can?(:destroy, review) %>
-    <%= link_to t("delete"), review, remote: true, method: :delete %>
-  <% end %>
-  <%= render "comments/form", review: review %>
-  <br>
-  <div class="col-md-10 col-md-offset-1">
-    <div id="comments_of_review_<%= review.id %>" class="row">
-      <%= render review.comments.comment %>
+  <div class="media">
+    <div class="media-left">
+      <a href="#">
+        <img class="media-object" src="/images.jpeg" alt="avatar">
+      </a>
+    </div>
+    <div class="media-body">
+      <span><%= link_to review.user.name, review.user %></span>
+      <span class="content">
+        <div class = "star-rating" data-score= <%= review.rating %> ></div>
+        <%= review.content %><br>
+        <%= review.thesis_statement %><br>
+      </span>
+      <i>
+        <%= t("time_ago", count: time_ago_in_words(review.created_at)) %>
+      </i>
+      <% if can?(:destroy, review) %>
+        <%= link_to t("delete"), review, remote: true, method: :delete %>
+      <% end %>
+      <div id="comments_of_review_<%= review.id %>" class="row">
+        <%= render review.comments.comment %>
+        <% if signed_in? %>
+          <%= render "comments/form", review: review %>
+        <% end %>
+      </div>  
     </div>
   </div>
 </div>

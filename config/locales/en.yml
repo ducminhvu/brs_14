@@ -43,7 +43,7 @@ en:
   log_in: "Log in"
   status_comfirm: "we need your current password to confirm your changes"
   cancel_my_account: "Cancel my account"
-  characters_minimum: "Characters minimum"
+  characters_minimum: " characters minimum"
   sessions: "sessions"
   registrations: "sessions"
   request: "My requests"
@@ -168,3 +168,4 @@ en:
   email:
     subject: "Email Subject"
   my_profile: "My Profile"
+  not-found-book: "Could not found any books"

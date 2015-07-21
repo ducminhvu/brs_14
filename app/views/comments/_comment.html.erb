@@ -1,19 +1,27 @@
 <div class="comment_<%= comment.id %>">
-  <hr>
-  <span><%= link_to comment.user.email, comment.user %></span>
-  <span class="content">
-    <% if current_user == comment.user %>
-      <%= best_in_place comment, :content %><br>
-    <% else %>
-      <%= comment.content %><br>
-    <% end %>
-  </span>
-  <span>
-    <i>
-      <%= t("time_ago", count: time_ago_in_words(comment.created_at)) %>
-    </i>
-    <% if can?(:destroy, comment) %>
-      <%= link_to t("delete"), comment, remote: true, method: :delete %>
-    <% end %>
-  </span>
+  <div class="col-md-12">
+    <div class="media">
+      <div class="media-left">
+        <a href="#">
+          <img class="media-object" src="/images.jpeg" alt="avatar">
+        </a>
+      </div>
+      <div class="media-body">
+        <div class="comment_<%= comment.id %>">
+          <span><%= link_to comment.user.name, comment.user %></span>
+          <span class="content">
+            <%= best_in_place comment, :content %><br>
+          </span>
+          <span>
+            <i>
+              <%= t("time_ago", count: time_ago_in_words(comment.created_at)) %>
+            </i>
+            <% if can?(:destroy, comment) %>
+              <%= link_to t("delete"), comment, remote: true, method: :delete %>
+            <% end %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
