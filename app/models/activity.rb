@@ -4,6 +4,8 @@ class Activity < ActiveRecord::Base
   has_many :liker, through: :likes, source: :user
   enum action_type: Settings.action_type
 
+  scope :sort_activities, ->{order created_at: :desc}
+
   def activity_out_text
     self.send self.action_type
   end
