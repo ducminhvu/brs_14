@@ -17,5 +17,6 @@
   <p id="notice"><%= notice %></p>
   <br><br>
   <%= render @books %>
+  <h1><%= t("not-found-book") if @books.blank? %></h1>
 </div>
 <%= will_paginate %>

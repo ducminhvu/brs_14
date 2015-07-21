@@ -1,9 +1,9 @@
-<%= form_for [review, @comment], remote: true do |f| %>
-  <%= f.hidden_field :review_id, value: review.id %>
-  <div class="field">
+<div class="col-md-12">
+  <%= form_for [review, @comment], remote: true do |f| %>
+    <%= f.hidden_field :review_id, value: review.id %>
     <%= f.text_field :content, placeholder: t("comment"), class: "createcomment form-control" %>
-  </div>
-  <div class="col-md-2">
-    <%= f.submit t("post"), class: "btn btn-primary" %>
-  </div>
-<% end %>
+    <div class="col-md-2">
+      <%= f.submit t("post"), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
