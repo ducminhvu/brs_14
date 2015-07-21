@@ -13,9 +13,14 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    Review.find(params[:id]).destroy
-    flash[:success] = t "review_deleted"
-    redirect_to :back
+    @review = Review.find params[:id]
+    if @review.destroy
+      respond_to do |format|
+        format.js
+      end
+    else
+      redirect_to :back
+    end
   end
 
   private

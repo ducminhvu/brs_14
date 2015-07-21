@@ -25,9 +25,14 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    Comment.find(params[:id]).destroy
-    flash[:success] = t "review_deleted"
-    redirect_to :back
+    @comment = Comment.find params[:id]
+    if @comment.destroy
+      respond_to do |format|
+        format.js
+      end
+    else
+      redirect_to :back
+    end
   end
   
   private
