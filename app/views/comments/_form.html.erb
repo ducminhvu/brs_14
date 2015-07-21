@@ -1,7 +1,7 @@
 <%= form_for [review, @comment], remote: true do |f| %>
   <%= f.hidden_field :review_id, value: review.id %>
   <div class="field">
-    <%= f.text_field :content, placeholder: t("comment"), class: "form-control" %>
+    <%= f.text_field :content, placeholder: t("comment"), class: "createcomment form-control" %>
   </div>
   <div class="col-md-2">
     <%= f.submit t("post"), class: "btn btn-primary" %>

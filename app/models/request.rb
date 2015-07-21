@@ -9,4 +9,10 @@ class Request < ActiveRecord::Base
   scope :requesting_of, ->user{where user_id: user.id, bought: false}
   scope :list_request_of, ->user{where user_id: user.id}
   scope :request_accepted_oneweekago, ->{where "bought = \"t\" AND updated_at < ?", Settings.week_back.week.ago}
+
+  after_save :send_mail_request
+  private
+  def send_mail_request
+    UserMailerSend.perform_async self.user_id 
+  end
 end
