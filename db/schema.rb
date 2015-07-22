@@ -85,6 +85,8 @@ ActiveRecord::Schema.define(version: 20150720025240) do
     t.datetime "updated_at",  null: false
   end
 
+  add_index "likes", ["user_id", "activity_id"], name: "index_likes_on_user_id_and_activity_id", unique: true
+
   create_table "readings", force: :cascade do |t|
     t.integer  "status"
     t.integer  "user_id"
