@@ -6,10 +6,10 @@ class ReviewsController < ApplicationController
     @review.book_id = params[:book_id]
     if @review.save
       flash[:success] = t "review_created"
-      redirect_to :back
     else
-      redirect_to :back
+      flash[:danger] = t "error"
     end
+    redirect_to :back
   end
 
   def destroy

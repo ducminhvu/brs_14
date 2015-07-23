@@ -12,6 +12,10 @@ class Review < ActiveRecord::Base
   scope :average_rated, ->book{where("book_id = ?",book.id).average("rating")}
   scope :review, ->{order created_at: :DESC}
 
+  validates :content, presence: true
+  validates :thesis_statement, presence: true
+  validates :rating, presence: true
+  
   private
   def activity_review
     activity_create :write_review, self.user

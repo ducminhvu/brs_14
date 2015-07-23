@@ -25,7 +25,6 @@ gem "whenever", require: false
 gem "delayed_job"
 gem "delayed_job_active_record"
 gem "daemons"
-gem "sidekiq"
 gem "jquery-ui-rails"
 
 group :development, :test do
@@ -33,10 +32,15 @@ group :development, :test do
   gem "byebug"
   gem "web-console", "~> 2.0"
   gem "spring"
+  gem "rspec-rails", "~> 3.0"
 end
 
 group :production do
   gem "pg", "0.17.1"
   gem "rails_12factor", "0.0.2"
   gem "puma", "2.11.1"
+end
+
+group :test do
+  gem "shoulda-matchers"
 end
