@@ -10,22 +10,22 @@ FactoryGirl.define do
 
   trait :hasnt_category do
     before :create do |book|
-      book.category nil
+      book.category = nil
     end
   end
   trait :has_category do
     before :create do |book|
-      book.category {FactoryGirl.create :category}
+      book.category = FactoryGirl.create :category
     end
   end
   trait :page_is_number do
     before :create do |book|
-      book.number_page {Faker::Number.number 4}
+      book.number_page = Faker::Number.number 4
     end
   end
   trait :page_isnt_number do
     before :create do |book|
-      book.number_page "aaa"
+      book.number_page = "aaa"
     end
   end
 end
